@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="text-center">
+    <h1><%= @restaurant.name %></h1>
+    <h5><%= @restaurant.address %></h5>
+    <h5><%= @restaurant.phone_number %></h5>
+    <h6><%= @restaurant.category %></h6>
+    <%= link_to "Return Home", restaurants_path, class: "btn btn-primary" %>
+  </div>
+
+<% @restaurant.reviews.each do |review| %>
+<%= review.content %>
+<%= review.rating %>
+<% end %>
